@@ -1,31 +1,36 @@
 import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
+import {initReactI18next} from "react-i18next";
+import EN from "./locales/en.json";
+import KG from "./locales/kg.json";
+import RU from "./locales/ru.json";
+import UK from "./locales/uk.json";
+import FR from "./locales/fr.json";
 
 i18n
     .use(initReactI18next)
     .init({
         resources: {
             en: {
-                translation: {
-                    "Welcome": "Welcome"
-                }
+                translation: EN
             },
             ru: {
-                translation: {
-                    "Welcome": "Добро пожаловать"
-                }
+                translation: RU
             },
             kg: {
-                translation: {
-                    "Welcome": "Кош келиниздер"
-                }
+                translation: KG
             },
+            uk: {
+                translation: UK
+            },
+            fr: {
+                translation: FR
+            }
         },
-        lng: "ru",
+        lng: "en",
         fallbackLng: "en",
         interpolation: {
             escapeValue: false
         }
     });
 
-export default  i18n;
+export default i18n;

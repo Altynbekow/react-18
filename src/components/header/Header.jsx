@@ -2,19 +2,29 @@ import cls from "./header.module.css"
 import logo from "../../assets/logo.svg"
 import {useState} from "react";
 // Bem blok element modificator
+import {useTranslation} from 'react-i18next'
 
 
 const Header = () => {
+    const {t, i18n} = useTranslation();
     const [lang, setLang] = useState('RU');
     const langChange = (e) => {
         if (e.target.innerText === 'RU') {
-            setLang("EN");
+            setLang("EN")
+            i18n.changeLanguage('en');
         } else if (e.target.innerText === 'EN') {
-            setLang("TR");
-        } else if (e.target.innerText === 'TR') {
+            setLang("UK");
+            i18n.changeLanguage('uk');
+        } else  if (e.target.innerText === 'UK') {
+            setLang("KG");
+            i18n.changeLanguage('kg');
+        }else if (e.target.innerText === 'KG') {
             setLang("RU");
-        } else {
+            i18n.changeLanguage('ru');
+        }
+        else{
             setLang("RU");
+            i18n.changeLanguage('ru');
         }
     }
     return (
